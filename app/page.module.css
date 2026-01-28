@@ -1,13 +1,13 @@
 .page {
-  --background: #fafafa;
-  --foreground: #fff;
+  --background: #f5f5f7;
+  --foreground: #ffffff;
 
-  --text-primary: #000;
-  --text-secondary: #666;
+  --text-primary: #111111;
+  --text-secondary: #555555;
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+  --button-primary-hover: #222222;
+  --button-secondary-hover: #f1f3f5;
+  --button-secondary-border: #e2e6ea;
 
   display: flex;
   min-height: 100vh;
@@ -19,14 +19,90 @@
 
 .main {
   display: flex;
-  min-height: 100vh;
+  min-height: 60vh;
   width: 100%;
   max-width: 800px;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: stretch;
+  justify-content: flex-start;
   background-color: var(--foreground);
   padding: 120px 60px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.todoSection {
+  width: 100%;
+}
+
+.inputRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.addButton {
+  padding: 0 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--text-primary);
+  color: var(--background);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.itemText {
+  color: var(--text-primary);
+}
+
+.deleteButton {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 8px;
+  color: #ff6b6b;
+}
+
+.deleteButton:hover {
+  transform: scale(1.1);
+}
+
+.empty {
+  color: var(--text-secondary);
+  font-size: 14px;
 }
 
 .intro {
@@ -128,14 +204,15 @@ a.secondary {
   }
 
   .page {
-    --background: #000;
-    --foreground: #000;
+    /* ダークモードでも明るい配色を維持して、文字を見やすくする */
+    --background: #f5f5f7;
+    --foreground: #ffffff;
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+    --text-primary: #111111;
+    --text-secondary: #555555;
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+    --button-primary-hover: #222222;
+    --button-secondary-hover: #f1f3f5;
+    --button-secondary-border: #e2e6ea;
   }
 }
