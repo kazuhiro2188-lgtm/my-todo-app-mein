@@ -83,8 +83,24 @@
   justify-content: space-between;
 }
 
+.itemContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+}
+
 .itemText {
   color: var(--text-primary);
+}
+
+.itemTextCompleted {
+  color: var(--text-secondary);
+  text-decoration: line-through;
 }
 
 .deleteButton {
