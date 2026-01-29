@@ -1,6 +1,7 @@
 body {
-  font-family: sans-serif;
-  background-color: #f8f9fa;
+  font-family: var(--font-geist-sans), "Hiragino Sans", "Noto Sans JP", sans-serif;
+  background-color: #f2f7f4;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
