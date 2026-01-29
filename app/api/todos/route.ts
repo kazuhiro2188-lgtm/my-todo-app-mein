@@ -24,10 +24,16 @@ export async function GET() {
 // 1) 作成：title を受け取り、is_done は false で登録
 export async function POST(req: NextRequest) {
   try {
-    const { title } = await req.json();
+    let body: { title?: unknown };
+    try {
+      body = await req.json();
+    } catch {
+      return NextResponse.json({ error: 'Invalid JSON or empty body' }, { status: 400 });
+    }
 
+    const title = body?.title;
     if (!title || typeof title !== 'string') {
-      return NextResponse.json({ error: 'title is required' }, { status: 400 });
+      return NextResponse.json({ error: 'title is required (string)' }, { status: 400 });
     }
 
     const supabase = getSupabaseServer();

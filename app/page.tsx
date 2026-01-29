@@ -55,7 +55,9 @@ export default function Home() {
       });
 
       if (!res.ok) {
-        throw new Error("TODOの追加に失敗しました");
+        const errBody = await res.json().catch(() => ({}));
+        const msg = typeof errBody?.error === "string" ? errBody.error : "TODOの追加に失敗しました";
+        throw new Error(msg);
       }
 
       const created: Todo = await res.json();
